@@ -1,5 +1,6 @@
 let currentQuestion = 0;
 let score = 0;
+let questions = [];
 
 const questionContainer = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
@@ -63,5 +64,6 @@ fetch('qn.json')
   .then((data) => {
     questions = data;
     loadQuestion(questions[currentQuestion]);
+    nextButton.disabled = false; // Enable the next button after questions are loaded
   });
-    
+  
